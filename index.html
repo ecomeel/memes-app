@@ -1,0 +1,56 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <meta charset="UTF-8" />
+        <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+        <link rel="stylesheet" href="css/style.css" />
+        <link rel="preconnect" href="https://fonts.googleapis.com" />
+        <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+        <link
+            href="https://fonts.googleapis.com/css2?family=IBM+Plex+Sans&family=Montserrat:wght@400;700&display=swap"
+            rel="stylesheet"
+        />
+        <title>Memes app</title>
+    </head>
+    <body>
+        <div class="memes-app">
+            <div class="container">
+                <h1 class="header">Memes App</h1>
+                <div class="contant-wrapper">
+                    <div class="settings">
+                        <h2 class="settings__title title">Settings</h2>
+                        <label class="settings__subtitle" for="settingsMem">Mem</label>
+                        <select
+                            id="settingsMem"
+                            class="settings__mem settings__area"
+                        >
+                            <option value="hello">hello</option>
+                        </select>
+                        <label
+                            class="settings__subtitle"
+                            for="settingsTopText"
+                        >Top Text</label>
+                        <input
+                            id="settingsTopText"
+                            class="settings__input settings__area"
+                            placeholder="Top Text"
+                        />
+                        <label
+                            class="settings__subtitle"
+                            for="settingsBottomText"
+                        >Bottom Text</label>
+                        <input
+                            id="settingsBottomText"
+                            class="settings__input settings__area"
+                            placeholder="Bottom Text"
+                        />
+                    </div>
+                    <div class="preview">
+                        <h2 class="preview__title title">Preview</h2>
+                        <div class="preview__result"></div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </body>
+</html>

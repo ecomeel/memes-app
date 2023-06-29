@@ -1,0 +1,70 @@
+@import "reset";
+
+body,
+html {
+    font: 400 25px "Montserrat", sans-serif;
+    width: 100%;
+    height: 100%;
+}
+
+.container {
+    width: 1200px;
+    margin: 0 auto;
+}
+.memes-app {
+    padding-top: 25px;
+    width: 100%;
+    height: 100%;
+}
+.header {
+    font-weight: 700;
+    font-size: 60px;
+    margin-bottom: 20px;
+    text-decoration: underline;
+}
+.contant-wrapper {
+    display: flex;
+}
+.settings {
+    flex: 1 0 50%;
+    
+    & > * {
+        display: block;
+    }
+
+    &__title {
+        margin-bottom: 42px;
+    }
+    &__subtitle {
+        font-size: 35px;
+        margin-bottom: 13px;
+    }
+    &__mem {
+    }
+    &__area {
+        height: 54px;
+        width: 393px;
+        border-radius: 15px;
+        border: 1px solid #000;
+        font: inherit;
+        padding-left: 22px;
+        &:not(:last-child) {
+            margin-bottom: 42px;
+        }
+    }
+    &__input {
+    }
+}
+.title {
+    font-size: 50px;
+    font-weight: 700;
+}
+.preview {
+    flex: 1 0 50%;
+
+    &__title {
+        margin-bottom: 72px;
+    }
+    &__result {
+    }
+}
