@@ -104,6 +104,11 @@ html {
   font-size: 35px;
   margin-bottom: 13px;
 }
+.settings__mem {
+  appearance: none;
+  background: url("../img/arrow.png") no-repeat transparent;
+  background-position: 95% 50%;
+}
 .settings__area {
   height: 54px;
   width: 393px;
@@ -111,6 +116,7 @@ html {
   border: 1px solid #000;
   font: inherit;
   padding-left: 22px;
+  padding-right: 12px;
 }
 .settings__area:not(:last-child) {
   margin-bottom: 42px;
