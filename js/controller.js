@@ -10,8 +10,12 @@ class Controller {
             .then(response => {
                 const memes = response.data.memes;
                 this.model.setMemes(memes)
-                this.view.renderChooseMem(this.model.getMemNames());
-                console.log(this.view.getChooseMemValue())
+                this.view.renderMemSelector(this.model.getMemNames());
+
+                // this.view.renderMemImage(this.model.getSelectedMemUrl())
+
+                console.log(this.model.getMemes())
+
             })
     }
 }
