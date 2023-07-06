@@ -10,12 +10,15 @@ class Controller {
     init() {
         this.api.fetchMemes()
             .then(response => {
+                if (!response.success) {
+                    alert('Ошибка получения данных!');
+                    return 
+                }
+
                 const memes = response.data.memes;
                 this.model.setMemes(memes)
                 this.view.renderMemSelector(this.model.getMemNames());
                 this.view.renderImg(this.model.getMemImgUrl(this.view.getSelectedMemName()))
-
-                console.log(this.model.getMemes());
             })
     }
 

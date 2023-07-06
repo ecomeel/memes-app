@@ -128,12 +128,13 @@ html {
 
 .preview {
   flex: 1 0 50%;
+  height: 100%;
 }
 .preview__title {
   margin-bottom: 72px;
 }
 .preview__result {
-  height: 500px;
+  height: 400px;
   position: relative;
 }
 .preview__img {
@@ -141,7 +142,7 @@ html {
   top: 0;
   left: 0;
   height: 100%;
-  max-width: 100%;
+  width: 100%;
 }
 .preview__top-text {
   position: absolute;
