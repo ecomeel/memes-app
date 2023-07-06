@@ -9,9 +9,9 @@ class View {
 
         this.onChangeMem = onChangeMem;
 
-        this.chooseMemNode.addEventListener('change', this.handleSelectMem);
-        this.setTopTextNode.addEventListener('change', this.handleSetTopText);
-        this.setBottomTextNode.addEventListener('change', this.handleSetBottomText);
+        this.chooseMemNode.addEventListener('change', this._handleSelectMem);
+        this.setTopTextNode.addEventListener('change', this._handleSetTopText);
+        this.setBottomTextNode.addEventListener('change', this._handleSetBottomText);
     }
 
     renderMemSelector(memNames) {
@@ -28,35 +28,33 @@ class View {
         previewImgNode.setAttribute('src', url)
     }
 
-    renderTopText(text) {
+    getSelectedMemName() {
+        return this.chooseMemNode.value;
+    }
+
+    _renderTopText(text) {
         const previewTopTextNode = this.previewNode.querySelector('#previewTopText');
         previewTopTextNode.innerText = text;
     }
     
-    renderBottomText(text) {
+    _renderBottomText(text) {
         const previewBottomTextNode = this.previewNode.querySelector('#previewBottomText');
         previewBottomTextNode.innerText = text;
     }
 
-    getSelectedMemName() {
-        return this.chooseMemNode.value;
-
-    }
-
-    handleSelectMem = () => {
+    _handleSelectMem = () => {
         const memUrl = this.onChangeMem(this.getSelectedMemName());
-
         this.renderImg(memUrl);        
     }
 
-    handleSetTopText = () => {
+    _handleSetTopText = () => {
         const text = this.setTopTextNode.value;
-        this.renderTopText(text)
+        this._renderTopText(text)
 
     }
 
-    handleSetBottomText = () => {
+    _handleSetBottomText = () => {
         const text = this.setBottomTextNode.value;
-        this.renderBottomText(text);
+        this._renderBottomText(text);
     }
 }
