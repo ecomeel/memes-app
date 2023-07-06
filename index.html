@@ -28,26 +28,30 @@
                         </select>
                         <label
                             class="settings__subtitle"
-                            for="settingsTopText"
+                            for="setTopText"
                         >Top Text</label>
                         <input
-                            id="settingsTopText"
+                            id="setTopText"
                             class="settings__input settings__area"
                             placeholder="Top Text"
                         />
                         <label
                             class="settings__subtitle"
-                            for="settingsBottomText"
+                            for="setBottomText"
                         >Bottom Text</label>
                         <input
-                            id="settingsBottomText"
+                            id="setBottomText"
                             class="settings__input settings__area"
                             placeholder="Bottom Text"
                         />
                     </div>
                     <div class="preview">
                         <h2 class="preview__title title">Preview</h2>
-                        <div id="preview" class="preview__result"></div>
+                        <div id="preview" class="preview__result">
+                            <img id="previewImg" class="preview__img" src="" alt="mem image">
+                            <p class="preview__top-text" id="previewTopText"></p>
+                            <p class="preview__bottom-text" id="previewBottomText"></p>
+                        </div>
                     </div>
                 </div>
             </div>

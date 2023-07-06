@@ -27,7 +27,7 @@ html {
 }
 .settings {
     flex: 1 0 50%;
-    
+
     & > * {
         display: block;
     }
@@ -41,7 +41,7 @@ html {
     }
     &__mem {
         appearance: none;
-        background: url('../img/arrow.png') no-repeat transparent;
+        background: url("../img/arrow.png") no-repeat transparent;
         background-position: 95% 50%;
     }
     &__area {
@@ -65,10 +65,38 @@ html {
 }
 .preview {
     flex: 1 0 50%;
-
     &__title {
         margin-bottom: 72px;
     }
     &__result {
+        height: 500px;
+        position: relative;
+    }
+    &__img {
+        position: absolute;
+        top: 0;
+        left: 0;
+        height: 100%;
+        max-width: 100%;
+    }
+    &__top-text {
+        position: absolute;
+        left: 0;
+        top: 20px;
+        width: 100%;
+        text-align: center;
+        font-size: 35px;
+        background-color: rgba($color: #fff, $alpha: .2);
+        word-wrap: break-word;
+    }
+    &__bottom-text {
+        position: absolute;
+        left: 0;
+        bottom: 20px;
+        width: 100%;
+        text-align: center;
+        font-size: 35px;
+        background-color: rgba($color: #fff, $alpha: .2);
+        word-wrap: break-word;
     }
 }

@@ -3,7 +3,6 @@ class Model {
         this.memes = [];
         this.memNames = [];
 
-
     }
 
     setMemes(mms) {
@@ -21,11 +20,13 @@ class Model {
         return this.memNames;
     }
 
-    getSelectedMemUrl(name) {
+    getMemImgUrl(memName) {
+        let memUrl;
         this.memes.forEach(mem => {
-            if (name === mem.name) {
-                return mem.url
+            if (mem.name == memName) {
+                memUrl = mem.url
             }
         });
+        return memUrl
     }
 }

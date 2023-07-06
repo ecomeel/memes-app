@@ -1,12 +1,17 @@
 class View {
-    constructor() {
+    constructor({ onChangeMem }) {
         this.chooseMemNode = document.getElementById('chooseMem');
-        this.previewNode = document.getElementById('preview');
+        this.setTopTextNode = document.getElementById('setTopText')
+        this.setBottomTextNode = document.getElementById('setBottomText');
+        this.previewNode = document.getElementById('preview')
 
         this.chooseMemHTML = '';
-        this.previewHTML = '';
 
-        this.chooseMemNode.addEventListener('change', this.changeMemHandler)
+        this.onChangeMem = onChangeMem;
+
+        this.chooseMemNode.addEventListener('change', this.handleSelectMem);
+        this.setTopTextNode.addEventListener('change', this.handleSetTopText);
+        this.setBottomTextNode.addEventListener('change', this.handleSetBottomText);
     }
 
     renderMemSelector(memNames) {
@@ -18,16 +23,40 @@ class View {
         this.chooseMemNode.innerHTML = this.chooseMemHTML;
     }
 
-    renderMemImage(url) {
-        const imgTag = `<img src=${url}>`;
-        this.previewHTML += imgTag;
+    renderImg(url) {
+        const previewImgNode = this.previewNode.querySelector('#previewImg');
+        previewImgNode.setAttribute('src', url)
     }
 
-    getChooseMemValue() {
+    renderTopText(text) {
+        const previewTopTextNode = this.previewNode.querySelector('#previewTopText');
+        previewTopTextNode.innerText = text;
+    }
+    
+    renderBottomText(text) {
+        const previewBottomTextNode = this.previewNode.querySelector('#previewBottomText');
+        previewBottomTextNode.innerText = text;
+    }
+
+    getSelectedMemName() {
         return this.chooseMemNode.value;
+
     }
 
-    changeMemHandler = () => {
-        // this.renderMemImage(this.getChooseMemValue()); 
+    handleSelectMem = () => {
+        const memUrl = this.onChangeMem(this.getSelectedMemName());
+
+        this.renderImg(memUrl);        
+    }
+
+    handleSetTopText = () => {
+        const text = this.setTopTextNode.value;
+        this.renderTopText(text)
+
+    }
+
+    handleSetBottomText = () => {
+        const text = this.setBottomTextNode.value;
+        this.renderBottomText(text);
     }
 }

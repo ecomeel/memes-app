@@ -1,7 +1,9 @@
 class Controller {
     constructor() {
         this.model = new Model();
-        this.view = new View();
+        this.view = new View({
+            onChangeMem: this.handleViewChangeMem
+        });
         this.api = new API();
     }
 
@@ -11,11 +13,14 @@ class Controller {
                 const memes = response.data.memes;
                 this.model.setMemes(memes)
                 this.view.renderMemSelector(this.model.getMemNames());
+                this.view.renderImg(this.model.getMemImgUrl(this.view.getSelectedMemName()))
 
-                // this.view.renderMemImage(this.model.getSelectedMemUrl())
-
-                console.log(this.model.getMemes())
-
+                console.log(this.model.getMemes());
             })
+    }
+
+    handleViewChangeMem = (memName) => {
+        const memUrl = this.model.getMemImgUrl(memName);
+        return memUrl;
     }
 }
