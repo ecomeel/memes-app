@@ -44,6 +44,8 @@ class View {
 
     _handleSelectMem = () => {
         const memUrl = this.onChangeMem(this.getSelectedMemName());
+        this._clearOldMemText();
+
         this.renderImg(memUrl);
 
     }
@@ -59,7 +61,11 @@ class View {
         this._renderBottomText(text);
     }
 
-    clearOldMemText = () => {
-        const previewTopText = document.getElementById('#')
+    _clearOldMemText = () => {
+        console.log('clear text');
+        document.getElementById('previewTopText').innerText = '';
+        document.getElementById('previewBottomText').innerText = '';
+        document.getElementById('setTopText').value = '';
+        document.getElementById('setBottomText').value = '';
     }
 }
