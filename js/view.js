@@ -44,7 +44,8 @@ class View {
 
     _handleSelectMem = () => {
         const memUrl = this.onChangeMem(this.getSelectedMemName());
-        this.renderImg(memUrl);        
+        this.renderImg(memUrl);
+
     }
 
     _handleSetTopText = () => {
@@ -56,5 +57,9 @@ class View {
     _handleSetBottomText = () => {
         const text = this.setBottomTextNode.value;
         this._renderBottomText(text);
+    }
+
+    clearOldMemText = () => {
+        const previewTopText = document.getElementById('#')
     }
 }
